@@ -2,7 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludePackageReferencesDuringPacking>false</IncludePackageReferencesDuringPacking>
+    <IsPackable>true</IsPackable>
+    
     <PackageId>ATSLib</PackageId>
     <Version>1.0.0</Version>
     <Authors>YourName</Authors>

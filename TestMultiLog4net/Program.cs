@@ -3,6 +3,7 @@ using log4net.Config;
 using System;
 using System.IO;
 using System.Reflection;
+using ATSLib;
 
 class Program
 {
@@ -18,5 +19,8 @@ class Program
         log.Error("Error message.");
 
         Console.WriteLine("Check the console for log4net output.");
+
+        Apple apple = new Apple();
+        apple.DoSomething();
     }
 }

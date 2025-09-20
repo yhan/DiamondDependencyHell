@@ -4,6 +4,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMultiLog4net", "TestMul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATSLib", "ATSLib\ATSLib.csproj", "{652B22B1-308E-4AA3-B9D4-30EAC179A65A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMultiLog4net.legacyfwk.app", "TestMultiLog4net.legacyfwk.app\TestMultiLog4net.legacyfwk.app.csproj", "{9C3CFCF9-D3F6-4302-B409-F0621432D9C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignIt", "SignIt", "{AA3CC362-6A74-4029-AB8E-988F977F3B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignIt.LegacyLib", "SignIt.LegacyLib\SignIt.LegacyLib.csproj", "{282D92E6-3329-405B-AFBB-1195F984F85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignIt", "SignIt\SignIt.csproj", "{99AADA73-F208-470A-919B-E80E64F09AF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +26,21 @@ Global
 		{652B22B1-308E-4AA3-B9D4-30EAC179A65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{652B22B1-308E-4AA3-B9D4-30EAC179A65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{652B22B1-308E-4AA3-B9D4-30EAC179A65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C3CFCF9-D3F6-4302-B409-F0621432D9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3CFCF9-D3F6-4302-B409-F0621432D9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3CFCF9-D3F6-4302-B409-F0621432D9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3CFCF9-D3F6-4302-B409-F0621432D9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282D92E6-3329-405B-AFBB-1195F984F85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282D92E6-3329-405B-AFBB-1195F984F85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282D92E6-3329-405B-AFBB-1195F984F85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282D92E6-3329-405B-AFBB-1195F984F85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AADA73-F208-470A-919B-E80E64F09AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AADA73-F208-470A-919B-E80E64F09AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AADA73-F208-470A-919B-E80E64F09AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AADA73-F208-470A-919B-E80E64F09AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{282D92E6-3329-405B-AFBB-1195F984F85B} = {AA3CC362-6A74-4029-AB8E-988F977F3B80}
+		{99AADA73-F208-470A-919B-E80E64F09AF4} = {AA3CC362-6A74-4029-AB8E-988F977F3B80}
 	EndGlobalSection
 EndGlobal
