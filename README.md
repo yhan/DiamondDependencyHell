@@ -35,11 +35,11 @@ at ATSLib.Apple.DoSomething()
 at Program.Main(String[] args) in C:\Users\hanyi\RiderProjects\TestMultiLog4net\TestMultiLog4net\Program.cs:line 24
 ````
 
-TestMultiLog4net.deps.json says everything is on log4net 1.2.13 (including ATSLib 1.1.0). So the host plans to load 1.2.13 — confirmed in
+TestMultiLog4net.deps.json says everything is on log4net 1.2.13 (including ATSLib 1.1.0). So the host plans to load 1.2.13 â€” confirmed in
 your TestMultiLog4net.deps.json.
 
 But the crash proves ATSLib.dll itself was compiled against log4net, Version=3.2.0.0 (your ILSpy screenshot shows that).
-On .NET (Core/5+/8) the loader must satisfy the exact strong-name version embedded in the referencing assembly; there’s
+On .NET (Core/5+/8) the loader must satisfy the exact strong-name version embedded in the referencing assembly; thereâ€™s
 no binding redirect/unification. So even if deps.json brings 1.2.13, the type loader still looks for 3.2.0.0 and throws.
 
 
@@ -136,3 +136,28 @@ ildasm your.dll /out=your.il
 ilasm your.il /dll /key=log4net.snk
 ````
 This will produce a signed DLL.
+
+
+# MSBuild & csc ...
+
+dotnet build = dotnet msbuild(.dll) myapp.csproj  
+
+
+## How csc.dll is invoked ? 
+dotnet exec path to csc.dll <args>
+This becomes invisible when you invoke dotnet build. Because in SDK-style builds, the C# compile is done by the Roslyn Csc MSBuild task and (by default) it talks  
+to the compiler server (VBCSCompiler.exe) instead of spawning a visible dotnet csc.dll process,  
+so the command line often isnâ€™t echoed.  
+
+But you can see the task CoreCompile target in bin build  log:
+<img width="894" height="245" alt="image" src="https://github.com/user-attachments/assets/95f3fc67-5e75-4800-9cf8-d8144dcdf6eb" />
+
+
+to view structured msbuild log :  
+https://msbuildlog.com/  
+dotnet build /bl  
+msbuild MyApp.csproj /bl  
+dotnet msbuild MyApp.csproj /bl:out/buildlog.binlog  
+
+
+
